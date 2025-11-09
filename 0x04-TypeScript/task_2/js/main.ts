@@ -60,5 +60,3 @@ export function executeWork(employee: Director | Teacher): string {
 const emp1 = createEmployee(200); // Teacher
 const emp2 = createEmployee(1000); // Director
 const emp3 = createEmployee("600"); // Director
-
-export
