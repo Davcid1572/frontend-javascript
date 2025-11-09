@@ -42,19 +42,23 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-function isDirector(employee: Director | Teacher): employee is Director {
+// Type guard to check if employee is Director
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
-// ✅ Execute work
-function executeWork(employee: Director | Teacher): string {
+// Execute work
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
     return employee.workTeacherTasks();
   }
 }
+
 // Example usage
 const emp1 = createEmployee(200); // Teacher
 const emp2 = createEmployee(1000); // Director
 const emp3 = createEmployee("600"); // Director
+
+export
